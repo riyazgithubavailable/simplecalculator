@@ -6,17 +6,58 @@ const Calculator = () => {
   const [result, setResult] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const validateInput = () => {
+  /*const validateInput = () => {
     setError('');
 
     if (!num1 || !num2 || isNaN(Number(num1)) || isNaN(Number(num2))) {
       setError('Error!');
+      setSuccess('');
+      setResult('');
       return false;
     }
       else{
         setSuccess('Success!')
+        setError('');
        return true;
       }
+      if (input1.trim() === "" || input2.trim() === "") {
+        setError("Both input fields are required.");
+        setResult("");
+        return false;
+      }
+  
+      if (isNaN(input1) || isNaN(input2)) {
+        setError("Please enter valid numbers.");
+        setInput1("");
+        setInput2("");
+        setResult("")
+        return false;
+  
+      }
+  
+      setError("");
+      return true;
+    
+  };*/
+  const validateInput = () => {
+    // Check if inputs are not empty and are valid numbers
+    if (num1.trim() === "" || num2.trim() === "") {
+      setError("Both input fields are required.");
+      setResult("");
+      return false;
+    }
+
+    if (isNaN(num1) || isNaN(num2)) {
+      setError("Please enter valid numbers.");
+      setNum1("");
+      setNum2("");
+      setResult("")
+      return false;
+
+    }
+
+    setError("");
+    return true;
   };
 
   const handleOperation = (operation) => {
@@ -64,9 +105,11 @@ const Calculator = () => {
         <button onClick={() => handleOperation('multiply')}>*</button>
         <button onClick={() => handleOperation('divide')}>/</button>
       </div>
-      {error &&<div style={{ color: 'red' }}>{error}</div>}
+      {/* {error &&<div style={{ color: 'red' }}>{error}</div>}
       {success &&<div style={{ color: 'blue' }}>{success}</div>}
-      {result && <div style={{ color: 'black' }}>{result}</div>}
+      {result && <div style={{ color: 'black' }}>{result}</div>} */}
+       {error && <p className="error">Error!<span>{error}</span></p>}
+      {result && <p className="success">Success!<span>{result}</span></p>}
       </div>
     </div>
 

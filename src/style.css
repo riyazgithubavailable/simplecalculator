@@ -42,3 +42,25 @@ button{
       margin: 50px auto; /* Adjust margin for better mobile placement */
     }
   }
+  .success{
+    margin-top: 5%;
+    color: blue;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+}
+
+.error{
+    margin-top: 5%;
+    color: red;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+
+}
